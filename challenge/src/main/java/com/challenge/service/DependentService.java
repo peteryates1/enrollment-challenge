@@ -18,6 +18,10 @@ public class DependentService {
 	@Autowired
 	private DependentDAO dependents;
 	
+	public Iterable<Dependent> findAll() {
+		return dependents.findAll();
+	}
+
 	public List<Dependent> findByEnrollee(Enrollee enrollee) {
 		return dependents.findByEnrollee(enrollee);
 	}

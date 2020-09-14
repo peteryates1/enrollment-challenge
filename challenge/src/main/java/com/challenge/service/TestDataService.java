@@ -33,7 +33,7 @@ public class TestDataService {
 		dependents.deleteAll();
 		enrollees.deleteAll();
 		
-		Enrollee peter = enrollees.save(Enrollee.builder()
+		final Enrollee peter = enrollees.save(Enrollee.builder()
 				.activationStatus(true)
 				.dateOfBirth(LocalDate.now().minusYears(37))
 				.name("Peter")
@@ -50,7 +50,7 @@ public class TestDataService {
 				.name("Mary")
 				.build());
 		
-		Enrollee john = enrollees.save(Enrollee.builder()
+		final Enrollee john = enrollees.save(Enrollee.builder()
 				.activationStatus(false)
 				.dateOfBirth(LocalDate.now().minusYears(47))
 				.name("John")

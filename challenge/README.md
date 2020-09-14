@@ -1,5 +1,7 @@
 # Getting Started
 
+###Challenge Requirements
+
 Using Spring Boot or Go, and your database of choice (PostgreSQL, MySQL, MongoDB -- any you'd like), develop a microservice for tracking the status of enrollees in a health care program.
 - Enrollees must have an id, name, and activation status (true or false), and a birth date
 - Enrollees may have a phone number (although they do not have to supply this)
@@ -14,15 +16,24 @@ The application we will be building will need to be able to do these things:
 - Remove dependents from an enrollee
 - Modify existing dependents
 
+#### Build
+mvnw clean install
+or
+mvn clean install
+
+#### Create docker image and start container
+./docker.sh
+
+#### Clean out the docker container and image
+./docker-rm.sh
+
 ### Entity Class Diagram
-![Entity Class Diagram](entity class diagram.png)
+![Entity Class Diagram](EntityClassDiagram.png)
 
 ### Rest End Points Swagger Snapshot
 http://localhost:8084/swagger-ui/index.html
 
-![Enrollee Controller](EnrolleeController.png)
-
-![Dependent Controller](DependentController.png)
+![Swagger Snapshot](SwaggerSnapshot.png)
 
 ### Rest End Points Schema
 ![Rest End Points Swagger Snapshot](Schemas.png)

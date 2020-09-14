@@ -25,10 +25,18 @@ public class DependentController {
 	private DependentService dependentService;
 	
 	@GetMapping(
+		path = "/dependents",
+		produces = MediaType.APPLICATION_JSON_VALUE
+	)
+	public Iterable<Dependent> getDependents() {
+		return dependentService.findAll();
+	}
+	
+	@GetMapping(
 		path = "/dependents/{dependentId}",
 		produces = MediaType.APPLICATION_JSON_VALUE
 	)
-	public ResponseEntity<Dependent> getDependent(@PathVariable("dependentId") Long dependentId) {
+	public ResponseEntity<Dependent> getDependent(final @PathVariable("dependentId") Long dependentId) {
 		try {
 			return ResponseEntity.ok(dependentService.findById(dependentId).get());
 		} catch (NoSuchElementException e) {
@@ -40,7 +48,7 @@ public class DependentController {
 		path = "/dependents/{dependentId}",
 		produces = MediaType.APPLICATION_JSON_VALUE
 	)
-	public void deleteDependent(@PathVariable("dependentId") Long dependentId) {
+	public void deleteDependent(final @PathVariable("dependentId") Long dependentId) {
 		dependentService.deleteById(dependentId);
 	}
 		
