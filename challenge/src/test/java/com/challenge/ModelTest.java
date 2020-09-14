@@ -22,6 +22,9 @@ import com.challenge.jpa.Enrollee;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Test the model implementation through REST endpoints.
+ */
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes=ChallengeApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 @Slf4j

@@ -25,6 +25,9 @@ import com.challenge.jpa.Dependent;
 import com.challenge.jpa.Enrollee;
 import com.challenge.service.EnrolleeService;
 
+/**
+ * Rest controller for enrollee entity.
+ */
 @RestController
 @RequestMapping("/api/v1")
 public class EnrolleeController {

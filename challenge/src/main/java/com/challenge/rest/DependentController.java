@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.challenge.jpa.Dependent;
 import com.challenge.service.DependentService;
 
+/**
+ * Rest controller for dependent entity.
+ */
 @RestController
 @RequestMapping("/api/v1")
 public class DependentController {

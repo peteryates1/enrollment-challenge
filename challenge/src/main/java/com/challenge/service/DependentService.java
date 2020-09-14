@@ -10,6 +10,9 @@ import com.challenge.dao.DependentDAO;
 import com.challenge.jpa.Dependent;
 import com.challenge.jpa.Enrollee;
 
+/**
+ * Bean providing services for the dependent entity.
+ */
 @Service
 public class DependentService {
 	@Autowired

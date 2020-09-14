@@ -20,6 +20,11 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+
+/**
+ * @author peter
+ * A dependent of an enrollee.
+ */
 @Entity
 @Data
 @SuperBuilder

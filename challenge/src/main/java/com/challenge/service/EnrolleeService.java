@@ -9,6 +9,9 @@ import com.challenge.dao.EnrolleeDAO;
 import com.challenge.jpa.Dependent;
 import com.challenge.jpa.Enrollee;
 
+/**
+ * Bean providing services for the enrollee entity.
+ */
 @Service
 public class EnrolleeService {
 	

@@ -22,6 +22,10 @@ import lombok.NoArgsConstructor;
 import lombok.Singular;
 import lombok.experimental.SuperBuilder;
 
+
+/**
+ * An enrollee who may have 0..* dependents.
+ */
 @Entity
 @Data
 @SuperBuilder
