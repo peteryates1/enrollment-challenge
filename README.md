@@ -19,6 +19,9 @@ mvnw clean install
 or
 mvn clean install
 
+#### Run with test data
+java -jar challenge-0.0.1-SNAPSHOT.jar --CreateTestData
+
 #### Create docker image and start container
 ./docker.sh
 
