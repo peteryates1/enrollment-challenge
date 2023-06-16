@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 .attach**
 db/*
-**.log
+**.log**
 
 ### STS ###
 .apt_generated

@@ -14,8 +14,8 @@
 	<artifactId>challenge</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>challenge</name>
-	<description>Challenge project</description>
+	<name>enrollment-challenge</name>
+	<description>Enrollment challenge project</description>
 
 	<properties>
 		<java.version>11</java.version>

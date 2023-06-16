@@ -2,9 +2,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo Build started on `date`
       - mvn package
-      - echo Build completed on `date`
 artifacts:
   files:
-    - target/challenge-0.0.1-SNAPSHOT.jar
+    - target/enrollment-challenge-0.0.1-SNAPSHOT.jar
+	- application.properties
