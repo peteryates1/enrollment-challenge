@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.challenge</groupId>
-	<artifactId>challenge</artifactId>
+	<artifactId>enrollment-challenge</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>enrollment-challenge</name>

@@ -5,5 +5,5 @@ phases:
       - mvn package
 artifacts:
   files:
-    - enrollment-challenge-0.0.1-SNAPSHOT.jar
+    - target/enrollment-challenge-0.0.1-SNAPSHOT.jar
     - application.properties
