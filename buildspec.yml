@@ -6,4 +6,4 @@ phases:
 artifacts:
   files:
     - target/enrollment-challenge-0.0.1-SNAPSHOT.jar
-	- application.properties
+    - application.properties
