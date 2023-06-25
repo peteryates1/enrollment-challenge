@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -33,7 +33,7 @@ import lombok.extern.slf4j.Slf4j;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes=ChallengeApplication.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 @Slf4j
-public class ModelTest {
+class ModelTest {
 	
 	@Autowired
 	private TestRestTemplate template;
@@ -69,7 +69,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetEnrollees() {
+	void testGetEnrollees() {
 		createEnrolleeAndDependents();
 		ResponseEntity<Enrollee[]> responseEntity = template.getForEntity(getEnrolleesUrl(), Enrollee[].class);
 		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
@@ -77,7 +77,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateGetDeleteEnrollee() {
+	void testCreateGetDeleteEnrollee() {
 		String name = "enrollee 1";
 		boolean activationStatus = true;
 		LocalDate dateOfBirth = LocalDate.now().minusYears(44);
@@ -102,14 +102,14 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetEnrolleeNotFound() {
+	void testGetEnrolleeNotFound() {
 		String url = getEnrolleesUrl()+"/1";
 		ResponseEntity<Enrollee> responseEntity = template.getForEntity(url, Enrollee.class);
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 	}
 	
 	@Test
-	public void testCreateEnrollee() {
+	void testCreateEnrollee() {
 		String name = "enrollee 1",
 				phoneNumber = "555-7863";
 		boolean activationStatus = true;
@@ -123,7 +123,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateEnrolleeNoName() {
+	void testCreateEnrolleeNoName() {
 		String url = getEnrolleesUrl();
 		boolean activationStatus = true;
 		LocalDate dateOfBirth = LocalDate.now().minusYears(44);
@@ -140,7 +140,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateEnrolleeNoDateOfBirth() {
+	void testCreateEnrolleeNoDateOfBirth() {
 		String url = getEnrolleesUrl(),
 			name = "enrollee 1";
 		boolean activationStatus = true;
@@ -154,7 +154,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateEnrolleeAndDependentAndDeleteDependent() {
+	void testCreateEnrolleeAndDependentAndDeleteDependent() {
 		String enrolleeName = "enrollee with dependent";
 		boolean activationStatus = true;
 		LocalDate enrolleeDateOfBirth = LocalDate.now().minusYears(44);
@@ -175,7 +175,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateDependentAndNoName() {
+	void testCreateDependentAndNoName() {
 		Enrollee savedEnrollee = createEnrollee("enrollee", true, LocalDate.now().minusYears(44));
 		assertNotNull(savedEnrollee.getId());
 		Dependent newDependent = Dependent.builder()
@@ -191,7 +191,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testCreateDependentAndNoDateOfBirth() {
+	void testCreateDependentAndNoDateOfBirth() {
 		Enrollee savedEnrollee = createEnrollee("enrollee", true, LocalDate.now().minusYears(44));
 		assertNotNull(savedEnrollee.getId());
 		Dependent newDependent = Dependent.builder()
@@ -207,7 +207,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetDependentsForEnrollee() {
+	void testGetDependentsForEnrollee() {
 		Enrollee savedEnrollee = createEnrolleeAndDependents();
 		String url = getEnrolleesUrl()+"/"+savedEnrollee.getId()+"/dependents";
 		ResponseEntity<Dependent[]> responseEntity = template.getForEntity(url, Dependent[].class);
@@ -216,14 +216,14 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetDependentsForEnrolleeNotFound() {
+	void testGetDependentsForEnrolleeNotFound() {
 		String url = getEnrolleesUrl()+"/1/dependents";
 		ResponseEntity<Dependent[]> responseEntity = template.getForEntity(url, Dependent[].class);
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());
 	}
 	
 	@Test
-	public void testGetDependents() {
+	void testGetDependents() {
 		createEnrolleeAndDependents();
 		String url = getDependentsUrl();
 		ResponseEntity<Dependent[]> responseEntity = template.getForEntity(url, Dependent[].class);
@@ -232,7 +232,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetDependent() {
+	void testGetDependent() {
 		Enrollee savedEnrollee = createEnrollee("enrollee", true, LocalDate.now().minusYears(44));
 		Dependent dependent = createDependent(savedEnrollee.getId(), "dependent", LocalDate.now().minusYears(14));
 		String url = getDependentsUrl()+"/"+dependent.getId();
@@ -242,7 +242,7 @@ public class ModelTest {
 	}
 	
 	@Test
-	public void testGetDependentNotFound() {
+	void testGetDependentNotFound() {
 		String url = getDependentsUrl()+"/1";
 		ResponseEntity<Dependent> responseEntity = template.getForEntity(url, Dependent.class);
 		assertEquals(HttpStatus.NOT_FOUND, responseEntity.getStatusCode());

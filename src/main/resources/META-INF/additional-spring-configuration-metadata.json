@@ -1,5 +1,5 @@
 {"properties": [{
   "name": "awsParameterStorePropertySource.enabled",
-  "type": "java.lang.String",
+  "type": "java.lang.Boolean",
   "description": "A description for 'awsParameterStorePropertySource.enabled'"
 }]}
