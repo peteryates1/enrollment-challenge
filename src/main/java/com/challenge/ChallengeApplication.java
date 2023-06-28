@@ -8,10 +8,14 @@ import org.springframework.context.annotation.Bean;
 
 import com.challenge.service.TestDataService;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.servers.Server;
+
 /**
  * Spring boot application entry point.
  */
 @SpringBootApplication
+@OpenAPIDefinition(servers = {@Server(url = "/", description = "Default Server URL")})
 public class ChallengeApplication {
 	
 	/**
