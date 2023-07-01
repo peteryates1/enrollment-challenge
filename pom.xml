@@ -11,7 +11,7 @@
 
 	<groupId>com.challenge</groupId>
 	<artifactId>enrollment-challenge</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>enrollment-challenge</name>
 	<description>Enrollment challenge project</description>

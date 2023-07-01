@@ -5,10 +5,10 @@ echo "#### Start: Application Start ####" >> /opt/ec/deploy.log
 cd /opt/ec
 
 ENV=`cat environment`
-echo ENV >> /opt/ec/deploy.log
+echo $ENV >> /opt/ec/deploy.log
 
 JAR=`ls enrollment-challenge-*.jar`
-echo JAR >> /opt/ec/deploy.log
+echo $JAR >> /opt/ec/deploy.log
 
 nohup java -jar $JAR -Dspring.profiles.active=$ENV >log/out.log 2>log/err.log &
 
