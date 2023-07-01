@@ -1,4 +1,4 @@
 #!/bin/bash -xe
 
-# rm -vf enrollment-challenge-*.jar
-# rm -vf application*.properties
+rm -vf enrollment-challenge-*.jar
+rm -vf application*.properties
