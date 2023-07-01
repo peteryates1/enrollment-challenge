@@ -3,8 +3,8 @@ os: linux
 files:
 #  - source: target/enrollment-challenge-*.jar
 #    destination: /opt/ec
-  - source: application*.properties
-    destination: /opt/ec
+#  - source: application*.properties
+#    destination: /opt/ec
 permissions:
   - object: scripts/*
     pattern: "**"
