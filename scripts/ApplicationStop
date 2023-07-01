@@ -2,5 +2,6 @@
 
 echo "#### Start: Application Stop ####" >> /opt/ec/deploy.log
 
+kill $(ps aux | grep '[e]nrollment-challenge'| awk '{print $2}')
 
 echo "#### Done: Application Stop ####" >> /opt/ec/deploy.log
