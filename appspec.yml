@@ -3,6 +3,8 @@ os: linux
 files:
   - source: target/enrollment-challenge-*.jar
     destination: /opt/ec
+  - source: target/application*.properties
+    destination: /opt/ec
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall

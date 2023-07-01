@@ -1,2 +1,4 @@
 #!/bin/bash -xe
-mkdir -p /opt/ec
+
+rm -vf enrollment-challenge-*.jar
+rm -vf application*.properties
