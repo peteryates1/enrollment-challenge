@@ -5,7 +5,8 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/enrollment-challenge-*.jar
+    - target/*.jar
     - application*.properties
     - scripts/*
+    - appspec.yml
   discard-paths: yes
