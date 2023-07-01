@@ -5,6 +5,10 @@ files:
     destination: /opt/ec
   - source: application*.properties
     destination: /opt/ec
+permissions:
+  - object: scripts/*
+    pattern: "**"
+    mode: +x
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall
