@@ -2,6 +2,7 @@
 
 echo "#### Start: Application Start ####" >> /opt/ec/deploy.log
 
+mkdir -p /opt/ec/log
 cd /opt/ec
 
 ENV=`cat environment`
