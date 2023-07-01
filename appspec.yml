@@ -7,14 +7,14 @@ files:
     destination: /opt/ec
 hooks:
   BeforeInstall:
-    - location: scripts/BeforeInstall
+    - location: BeforeInstall
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/AfterInstall
+    - location: AfterInstall
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/ApplicationStart
+    - location: ApplicationStart
       timeout: 300
       runas: root
