@@ -8,7 +8,7 @@ files:
 permissions:
   - object: scripts/*
     pattern: "**"
-    mode: +x
+    mode: 755
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall
