@@ -2,6 +2,7 @@
 
 echo "#### Start: After Install ####" >> /opt/ec/deploy.log
 
+cd /opt/ec
 
 ENV=`cat environment`
 echo ENV >> /opt/ec/deploy.log
