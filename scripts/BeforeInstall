@@ -1,8 +1,13 @@
 #!/bin/bash -xe
 
+echo "#### Start: Before Install ####" >> /opt/ec/deploy.log
+
 pwd > /opt/ec/deploy.log
 whoami >> /opt/ec/deploy.log
 ls -ltr >> /opt/ec/deploy.log
 
 rm -vf enrollment-challenge-*.jar >> /opt/ec/deploy.log
 rm -vf application*.properties >> /opt/ec/deploy.log
+
+echo "#### Done: Before Install ####" >> /opt/ec/deploy.log
+

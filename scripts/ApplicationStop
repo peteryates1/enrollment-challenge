@@ -1,2 +1,6 @@
 #!/bin/bash -xe
 
+echo "#### Start: Application Stop ####" >> /opt/ec/deploy.log
+
+
+echo "#### Done: Application Stop ####" >> /opt/ec/deploy.log

@@ -1,2 +1,13 @@
 #!/bin/bash -xe
 
+echo "#### Start: Application Start ####" >> /opt/ec/deploy.log
+
+ENV=`cat environment`
+echo ENV >> /opt/ec/deploy.log
+
+JAR=`ls enrollment-challenge-*.jar`
+echo JAR >> /opt/ec/deploy.log
+
+nohup java -jar $JAR -Dspring.profiles.active=$ENV >log/out.log 2>log/err.log &
+
+echo "#### Done: Application Start ####" >> /opt/ec/deploy.log

@@ -1,2 +1,10 @@
 #!/bin/bash -xe
 
+echo "#### Start: After Install ####" >> /opt/ec/deploy.log
+
+
+ENV=`cat environment`
+echo ENV >> /opt/ec/deploy.log
+
+
+echo "#### Done: After Install ####" >> /opt/ec/deploy.log
