@@ -1,4 +1,8 @@
 #!/bin/bash -xe
 
+pwd > deploy.log
+whoami >> deploy.log
+ls -ltr >> deploy.log
+
 rm -vf enrollment-challenge-*.jar
 rm -vf application*.properties
