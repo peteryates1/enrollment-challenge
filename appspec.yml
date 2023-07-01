@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: target/enrollment-challenge-*.jar
-    destination: /opt/ec
+#  - source: target/enrollment-challenge-*.jar
+#    destination: /opt/ec
   - source: application*.properties
     destination: /opt/ec
 permissions:
