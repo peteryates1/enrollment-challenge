@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: target/enrollment-challenge-*.jar
+    destination: /opt/ec
+hooks:
+  BeforeInstall:
+    - location: scripts/BeforeInstall
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/AfterInstall
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/ApplicationStart
+      timeout: 300
+      runas: root

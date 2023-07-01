@@ -10,10 +10,13 @@ import com.challenge.dao.DependentDAO;
 import com.challenge.jpa.Dependent;
 import com.challenge.jpa.Enrollee;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Bean providing services for the dependent entity.
  */
 @Service
+@Slf4j
 public class DependentService {
 	@Autowired
 	private DependentDAO dependents;
@@ -27,7 +30,10 @@ public class DependentService {
 	}
 
 	public <S extends Dependent> S save(S entity) {
-		return dependents.save(entity);
+		log.info("saving dependent: {}", entity);
+		final var saved = dependents.save(entity);
+		log.info("saved dependent: {}", saved);
+		return saved;
 	}
 
 	public Optional<Dependent> findById(Long id) {
@@ -35,6 +41,7 @@ public class DependentService {
 	}
 
 	public void deleteById(Long id) {
+		log.info("deleting dependent id: {}", id);
 		dependents.deleteById(id);
 	}
 }
