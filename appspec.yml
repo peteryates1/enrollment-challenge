@@ -1,20 +1,20 @@
 version: 0.0
 os: linux
 files:
-  - source: *.jar
+  - source: target/*.jar
     destination: /opt/ec
   - source: application*.properties
     destination: /opt/ec
 hooks:
   BeforeInstall:
-    - location: BeforeInstall
+    - location: scripts/BeforeInstall
       timeout: 300
       runas: root
   AfterInstall:
-    - location: AfterInstall
+    - location: scripts/AfterInstall
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: ApplicationStart
+    - location: scripts/ApplicationStart
       timeout: 300
       runas: root

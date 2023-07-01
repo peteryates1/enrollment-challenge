@@ -9,4 +9,3 @@ artifacts:
     - application*.properties
     - scripts/*
     - appspec.yml
-  discard-paths: yes
