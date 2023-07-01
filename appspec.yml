@@ -3,8 +3,8 @@ os: linux
 files:
   - source: /target
     destination: /opt/ec
-  # - source: /application*.properties
-  #   destination: /opt/ec
+  - source: /application-dev.properties
+    destination: /opt/ec
 file_exists_behavior: OVERWRITE
 permissions:
   - object: scripts/*
